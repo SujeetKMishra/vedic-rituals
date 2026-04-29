@@ -20,7 +20,19 @@
     }
     .service-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
 </style>
+
+<meta name="description" content="Traditional Vedic pooja and ritual services in Stockholm. Satyanarayan Katha, Grihapravesh, Rudrabhishek, Diwali pooja and more.">
+
+<meta name="keywords" content="Pandit Stockholm, Hindu priest Sweden, Pooja services Stockholm, Satyanarayan Katha Sweden, Indian priest Stockholm">
+
+<a href="https://wa.me/46722877775" 
+   class="fixed bottom-6 left-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition z-50"
+   target="_blank">
+   <i class="fab fa-whatsapp text-2xl"></i>
+</a>
+
 </head>
+
 <body class="bg-orange-50 text-gray-800 font-sans">
 
 <!-- Navbar -->
@@ -29,7 +41,10 @@
         <a href="#"><h1 class="text-2xl font-bold text-orange-600 tracking-tight">Vedic-Rituals</h1></a>
         <div class="hidden md:flex items-center space-x-6 font-medium">
             <a href="#services" class="hover:text-orange-600 transition" data-i18n="services">Services</a>
-            <a href="#contact" class="hover:text-orange-600 transition" data-i18n="contact">Contact: +46 722877775</a>
+            <a href="tel:+46722877775" class="hover:text-orange-600 transition" data-i18n="contact">
+                Contact: +46 722877775
+            </a>
+            <a href="#gallery" class="hover:text-orange-600 transition" data-i18n="gallery">Gallery</a>
 
             <!-- Language Flags -->
             <div>
@@ -49,10 +64,12 @@
             </button>
         </div>
     </div>
+    <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
         <div class="flex flex-col p-4 space-y-3">
-            <a href="#services" class="text-gray-700">Services</a>
-            <a href="#contact" class="text-gray-700">Contact</a>
+            
+            <a href="#services" class="text-gray-700" data-i18n="services">Services</a>
+            <a href="#contact" class="text-gray-700" data-i18n="contact">Contact</a>
             <div>
                 <select id="languageSwitcherMobile"
                     class="border border-gray-300 rounded-lg px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
@@ -69,25 +86,26 @@
 
 
 <!-- Hero Section -->
-<header class="hero-bg min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center text-center text-white px-4">
+<header class="hero-bg min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh] flex items-center justify-center text-center text-white px-4">
     <div class="px-4 sm:px-6 md:px-8 mt-0">
         <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 italic leading-tight" data-i18n="heroTitle">Vedic-Rituals in Stockholm</h2>
         <p class="text-lg sm:text-xl md:text-2xl opacity-90 max-w-2xl mx-auto font-light" data-i18n="heroSubtitle">
-            Traditional Vedic Rituals & Poojas performed at your home in Sweden.
+            Traditional Vedic Rituals & Poojas performed at your home in Sweden. Vedic-Rituals provides authentic Vedic poojas and rituals at your home in Stockholm. With years of experience, we ensure traditional practices with devotion and precision, bringing positivity and spiritual harmony to your family and home.
         </p>
         <div class="mt-6 md:mt-8 space-x-2 sm:space-x-4">
             <a href="#services" class="inline-block bg-white text-orange-600 px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-bold hover:bg-orange-100 transition text-sm sm:text-base md:text-lg" data-i18n="ourServices">
                 Our Services
             </a>
-            <a href="#contact" class="inline-block bg-orange-600 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-bold hover:bg-orange-700 transition text-sm sm:text-base md:text-lg" data-i18n="bookNow">
+            
+            <!-- <a href="#contact" class="inline-block bg-orange-600 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-bold hover:bg-orange-700 transition text-sm sm:text-base md:text-lg" data-i18n="bookNow">
                 Book Now
-            </a>
+            </a> -->
         </div>
     </div>
 </header>
 
 <!-- Services Section -->
-<section id="services" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="services" class="py-8 sm:py-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-2">
         <h2 class="text-3xl sm:text-4xl md:text-4xl font-bold text-gray-900" data-i18n="servicesHeading">Sacred Services</h2>
         <p class="text-gray-500 mt-1 text-lg sm:text-xl" data-i18n="servicesSubheading">Bringing divinity to your doorstep in Stockholm</p>
@@ -132,7 +150,7 @@
         </div>
 
         <div class="service-card bg-white p-5 sm:p-6 md:p-8 rounded-2xl shadow-sm border-l-4 border-orange-500">
-            <h3 class="text-xl font-bold mb-3 text-orange-700" data-i18n="vishwakarma">Vishwakarma Pooja</h3>
+            <h3 class="text-xl font-bold mb-3 text-orange-700" data-i18n="vishwakarma">Vahan Pooja</h3>
             <p class="text-gray-600 text-sm sm:text-base leading-relaxed" data-i18n="vishwakarmaDesc">
                 Blessings for your workspace, vehicles, tools, and technology. Ideal for offices and technical professionals in Stockholm.
             </p>
@@ -162,6 +180,42 @@
     </div>
 </section>
 
+<!-- Gallery Section -->
+<section id="gallery" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-orange-50">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl md:text-4xl font-bold text-gray-900" data-i18n="galleryHeading">Gallery</h2>
+        <p class="text-gray-500 mt-2 text-lg sm:text-xl" data-i18n="gallerySubheading">Some glimpses of our Vedic rituals and poojas</p>
+        <div class="w-24 h-1 bg-orange-500 mx-auto mt-2"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">   
+        <div class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
+            <img src="images/gallery01.jpeg" alt="Ritual 0" class="w-full h-auto rounded-2xl">
+        </div>  
+        <div class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
+            <img src="images/gallery02.jpeg" alt="Ritual 0" class="w-full h-auto rounded-2xl">
+        </div>
+        <div class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
+            <img src="images/gallery0.jpeg" alt="Ritual 0" class="w-full h-auto rounded-2xl">
+        </div>  
+        <div class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
+            <img src="images/gallery1.jpg" alt="Ritual 1" class="w-full h-auto rounded-2xl">
+        </div>     
+        <div class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
+            <img src="images/gallery2.jpg" alt="Ritual 2" class="w-full h-auto rounded-2xl">
+        </div>
+        <div class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
+            <img src="images/gallery3.jpg" alt="Ritual 3" class="w-full h-auto rounded-2xl">
+        </div>
+        <!-- <div class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
+            <img src="images/gallery4.jpg" alt="Ritual 4" class="w-full h-auto rounded-2xl">
+        </div>
+        <div class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
+            <img src="images/gallery5.jpg" alt="Ritual 5" class="w-full h-auto rounded-2xl">
+        </div> -->
+    </div>
+</section>
+
 <!-- Contact Section -->
 <section id="contact" class="py-20 bg-orange-600 text-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 text-center">
@@ -188,6 +242,10 @@
 
 <!-- Scripts -->
 <script>
+// Disable right click
+/* document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+}); */
 // ======================
 // Scroll to Top Button
 // ======================
@@ -203,7 +261,8 @@ scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 's
 // ======================
 const translations = {
     en: {
-        services:"Services", contact:"Contact +46 722877775",
+
+        services:"Services", contact:"Contact +46 722877775", gagallerylla:"Gallery",
         heroTitle:"Vedic-Rituals in Stockholm",
         heroSubtitle:"Traditional Vedic Rituals & Poojas performed at your home in Sweden.",
         ourServices:"Our Services", bookNow:"Book Now",
@@ -220,7 +279,7 @@ const translations = {
         grihapraveshDesc:"Vastu Shanti and Shubh Muhurat Pooja for your new home in Sweden to invite positive energy and divine protection.",
         rudrabhishek:"Rudrabhishek",
         rudrabhishekDesc:"Powerful worship of Lord Shiva with offerings of milk and honey for health, success, and spiritual strength.",
-        vishwakarma:"Vishwakarma Pooja",
+        vishwakarma:"Vahan Pooja",
         vishwakarmaDesc:"Blessings for your workspace, vehicles, tools, and technology. Ideal for offices and technical professionals in Stockholm.",
         diwali:"Diwali & Navratri",
         diwaliDesc:"Lakshmi Pooja for Diwali and Durga Path/Kanya Pujan during Navratri to celebrate the triumph of light and energy.",
@@ -238,9 +297,21 @@ const translations = {
         contactSubheading:"I am available to travel within Stockholm and nearby areas.",
         contactDetails:"Contact Details",
         paymentInfo:"Payment via Swish or cash accepted.",
-        footer:"© 2026 Vedic-Rituals | Traditional Rituals in Sweden"
+        footer:"© 2026 Vedic-Rituals | Traditional Rituals in Sweden",
+        gallery: "Gallery",
+        galleryHeading: "Gallery",
+        gallerySubheading: "Some glimpses of our Vedic rituals and poojas",
+        galleryImages: [
+            { src: "images/gallery0.jpg", alt: "Ritual 0" },
+            { src: "images/gallery1.jpg", alt: "Ritual 1" },
+            { src: "images/gallery2.jpg", alt: "Ritual 2" },
+            { src: "images/gallery3.jpg", alt: "Ritual 3" },
+           /*  { src: "images/gallery4.jpg", alt: "Ritual 4" },
+            { src: "images/gallery5.jpg", alt: "Ritual 5" } */
+        ]
     },
     hi: {
+
         services:"सेवाएं", contact:"संपर्क +46 722877775",
         heroTitle:"स्टॉकहोम में पूजा पाठ",
         heroSubtitle:"स्वीडन में आपके घर पर पारंपरिक वैदिक पूजा और अनुष्ठान।",
@@ -258,7 +329,7 @@ const translations = {
         grihapraveshDesc:"आपके नए घर के लिए वास्तु शांति और शुभ मुहूर्त पूजा। सकारात्मक ऊर्जा और दिव्य संरक्षण के लिए।",
         rudrabhishek:"रुद्राभिषेक",
         rudrabhishekDesc:"शिवजी की शक्ति पूजा, स्वास्थ्य, सफलता और आध्यात्मिक शक्ति के लिए दूध और शहद के साथ।",
-        vishwakarma:"विश्वकर्मा पूजा",
+        vishwakarma:"वाहन पूजा",
         vishwakarmaDesc:"आपके कार्यस्थल, वाहन, उपकरण और तकनीक के लिए आशीर्वाद। कार्यालयों और तकनीकी पेशेवरों के लिए आदर्श।",
         diwali:"दिवाली और नवरात्रि",
         diwaliDesc:"दिवाली के लिए लक्ष्मी पूजा और नवरात्रि में दुर्गा पाठ/कन्या पूजन।",
@@ -276,9 +347,21 @@ const translations = {
         contactSubheading:"मैं स्टॉकहोम और आसपास के क्षेत्रों में यात्रा के लिए उपलब्ध हूं।",
         contactDetails:"संपर्क विवरण",
         paymentInfo:"स्विश या नकद के माध्यम से भुगतान स्वीकार किया जाता है।",
-        footer:"© 2026 Vedic-Rituals | स्वीडन में पारंपरिक अनुष्ठान"
+        footer:"© 2026 वैदिक अनुष्ठान | स्वीडन में पारंपरिक अनुष्ठान",
+        gallery: "गैलरी",
+        galleryHeading: "गैलरी",
+        gallerySubheading: "हमारे वैदिक अनुष्ठान और पूजा की झलकियाँ",
+        galleryImages: [
+            { src: "images/gallery0.jpg", alt: "अनुष्ठान 0" },
+            { src: "images/gallery1.jpg", alt: "अनुष्ठान 1" },
+            { src: "images/gallery2.jpg", alt: "अनुष्ठान 2" },
+            { src: "images/gallery3.jpg", alt: "अनुष्ठान 3" },
+            /* { src: "images/gallery4.jpg", alt: "अनुष्ठान 4" },
+            { src: "images/gallery5.jpg", alt: "अनुष्ठान 5" } */
+        ]
     },
     sv: {
+
         services:"Tjänster", contact:"Kontakt +46 722877775",
         heroTitle:"Vedic-Rituals i Stockholm",
         heroSubtitle:"Traditionella vediska ritualer och Pooja utförs i ditt hem i Sverige.",
@@ -296,7 +379,7 @@ const translations = {
         grihapraveshDesc:"Vastu Shanti och Shubh Muhurat Pooja för ditt nya hem i Sverige för att bjuda in positiv energi och gudomligt skydd.",
         rudrabhishek:"Rudrabhishek",
         rudrabhishekDesc:"Kraftfull dyrkan av Lord Shiva med erbjudanden av mjölk och honung för hälsa, framgång och andlig styrka.",
-        vishwakarma:"Vishwakarma Pooja",
+        vishwakarma:"Vahan Pooja",
         vishwakarmaDesc:"Välsignelser för din arbetsplats, fordon, verktyg och teknik. Idealisk för kontor och tekniska yrkesverksamma i Stockholm.",
         diwali:"Diwali & Navratri",
         diwaliDesc:"Lakshmi Pooja för Diwali och Durga Path/Kanya Pujan under Navratri för att fira ljusets och energins triumf.",
@@ -314,7 +397,18 @@ const translations = {
         contactSubheading:"Jag är tillgänglig för att resa inom Stockholm och närliggande områden.",
         contactDetails:"Kontaktuppgifter",
         paymentInfo:"Betalning via Swish eller kontant accepteras.",
-        footer:"© 2026 Vedic-Rituals | Traditionella ritualer i Sverige"
+        footer:"© 2026 Vedic-Rituals | Traditionella ritualer i Sverige",
+        gallery: "Galleri",
+        galleryHeading: "Galleri",
+        gallerySubheading: "Ett urval av våra vediska ritualer och poojas",
+        galleryImages: [
+            { src: "images/gallery0.jpg", alt: "Ritual 0" },
+            { src: "images/gallery1.jpg", alt: "Ritual 1" },
+            { src: "images/gallery2.jpg", alt: "Ritual 2" },
+            { src: "images/gallery3.jpg", alt: "Ritual 3" },
+            /* { src: "images/gallery4.jpg", alt: "Ritual 4" },
+            { src: "images/gallery5.jpg", alt: "Ritual 5" } */
+        ]
     }
 };
 
