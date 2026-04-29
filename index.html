@@ -58,28 +58,28 @@
                 </select>
             </div>
         </div>
-        <div class="md:hidden">
+        <!-- Mobile menu -->
+        <div class="md:hidden flex items-center space-x-3">
+            <!-- Language Switcher (VISIBLE on mobile) -->
+            <select id="languageSwitcherMobileHeader"
+                class="border border-gray-300 rounded-lg px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
+                <option value="en">EN</option>
+                <option value="hi">HI</option>
+                <option value="sv">SV</option>
+            </select>
+
+            <!-- Hamburger -->
             <button id="mobile-menu-button" class="focus:outline-none">
                 <i class="fas fa-bars text-2xl text-orange-600"></i>
             </button>
         </div>
     </div>
-    <!-- Mobile menu -->
+    <!-- Hamburger -->
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
         <div class="flex flex-col p-4 space-y-3">
             
             <a href="#services" class="text-gray-700" data-i18n="services">Services</a>
             <a href="#contact" class="text-gray-700" data-i18n="contact">Contact</a>
-            <div>
-                <select id="languageSwitcherMobile"
-                    class="border border-gray-300 rounded-lg px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500">
-                    
-                    <option value="en">English</option>
-                    <option value="hi">Hindi</option>
-                    <option value="sv">Swedish</option>
-                    
-                </select>
-            </div>
         </div>
     </div>  
 </nav>
@@ -416,7 +416,7 @@ const translations = {
 // Language Selection
 // ======================
 const languageSwitcherDesktop = document.getElementById("languageSwitcherDesktop");
-const languageSwitcherMobile = document.getElementById("languageSwitcherMobile");
+const languageSwitcherMobileHeader = document.getElementById("languageSwitcherMobileHeader");
 
 function translatePage(lang){
     document.querySelectorAll("[data-i18n]").forEach(el=>{
@@ -431,7 +431,7 @@ function translatePage(lang){
 
     // Sync dropdowns
     languageSwitcherDesktop.value = lang;
-    languageSwitcherMobile.value = lang;
+    languageSwitcherMobileHeader.value = lang;
 }
 
 // Load language on page load
@@ -442,7 +442,7 @@ translatePage(lang);
 languageSwitcherDesktop.addEventListener("change", function () {
     translatePage(this.value);
 });
-languageSwitcherMobile.addEventListener("change", function () {
+languageSwitcherMobileHeader.addEventListener("change", function () {
     translatePage(this.value);
 });
 
