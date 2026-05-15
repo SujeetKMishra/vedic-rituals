@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sujeetkmishra.github.io/vedic-rituals/sitemap.xml
