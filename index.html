@@ -304,9 +304,37 @@
         </div>
     </section>
 
+    <!-- Cookie Banner -->
+    <div id="cookie-banner"
+        class="fixed bottom-0 left-0 w-full bg-gray-900 text-white px-4 py-4 z-50 shadow-lg hidden">
+        
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <p class="text-sm md:text-base leading-relaxed">
+                We use cookies to improve your browsing experience and ensure the website functions properly.
+                By continuing to use this site, you accept our use of cookies.
+            </p>
+    
+            <div class="flex gap-3">
+                <button id="accept-cookies"
+                    class="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded-lg font-medium transition">
+                    Accept
+                </button>
+    
+                <button id="decline-cookies"
+                    class="border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="py-8 sm:py-12 bg-gray-50 text-center text-gray-400 text-sm px-4" data-i18n="footer">
         © 2026 Vedic-Rituals | Traditional Rituals in Sweden
+        <a href="cookie-policy.html" class="text-orange-600 hover:underline">
+            Cookie Policy
+        </a>
     </footer>
 
     <!-- Scripts -->
@@ -530,6 +558,31 @@
             if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
                 mobileMenu.classList.add("hidden");
             }
+        });
+
+        // ======================
+        // Cookie Consent
+        // ======================
+        
+        const cookieBanner = document.getElementById("cookie-banner");
+        const acceptCookies = document.getElementById("accept-cookies");
+        const declineCookies = document.getElementById("decline-cookies");
+        
+        // Check if user already made a choice
+        if (!localStorage.getItem("cookieConsent")) {
+            cookieBanner.classList.remove("hidden");
+        }
+        
+        // Accept
+        acceptCookies.addEventListener("click", () => {
+            localStorage.setItem("cookieConsent", "accepted");
+            cookieBanner.classList.add("hidden");
+        });
+        
+        // Decline
+        declineCookies.addEventListener("click", () => {
+            localStorage.setItem("cookieConsent", "declined");
+            cookieBanner.classList.add("hidden");
         });
     </script>
 
