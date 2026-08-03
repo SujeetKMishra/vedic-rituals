@@ -239,52 +239,16 @@
     <!-- Gallery Section -->
     <section id="gallery" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-orange-50">
         <div class="text-center mb-12">
-            <h2 class="text-3xl sm:text-4xl md:text-4xl font-bold text-gray-900" data-i18n="galleryHeading">Gallery</h2>
-            <p class="text-gray-500 mt-2 text-lg sm:text-xl" data-i18n="gallerySubheading">Some glimpses of our Vedic
-                rituals and poojas</p>
+            <h2 class="text-3xl sm:text-4xl md:text-4xl font-bold text-gray-900" data-i18n="galleryHeading">
+                Gallery
+            </h2>
+            <p class="text-gray-500 mt-2 text-lg sm:text-xl" data-i18n="gallerySubheading">
+                Some glimpses of our Vedic rituals and poojas
+            </p>
             <div class="w-24 h-1 bg-orange-500 mx-auto mt-2"></div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> 
-            <div
-                class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
-                <img src="images/gallery6.jpg" alt="Ritual 6" class="w-full h-auto rounded-2xl">
-            </div>
-            <div
-                class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
-                <img src="images/gallery5.jpg" alt="Ritual 5" class="w-full h-auto rounded-2xl">
-            </div>
-            <div
-                class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
-                <img src="images/gallery4.jpg" alt="Ritual 4" class="w-full h-auto rounded-2xl">
-            </div>
-            <div
-                class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
-                <img src="images/gallery001.jpeg" alt="Ritual 001" class="w-full h-auto rounded-2xl">
-            </div>
-            <div
-                class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
-                <img src="images/gallery02.jpeg" alt="Ritual 0" class="w-full h-auto rounded-2xl">
-            </div>
-            <div
-                class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
-                <img src="images/gallery0.jpeg" alt="Ritual 0" class="w-full h-auto rounded-2xl">
-            </div>
-            <div
-                class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
-                <img src="images/gallery1.jpg" alt="Ritual 1" class="w-full h-auto rounded-2xl">
-            </div>
-            <div
-                class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
-                <img src="images/gallery2.jpg" alt="Ritual 2" class="w-full h-auto rounded-2xl">
-            </div>
-            <!-- <div class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
-            <img src="images/gallery4.jpg" alt="Ritual 4" class="w-full h-auto rounded-2xl">
-        </div>
-        <div class="overflow-hidden rounded-2xl shadow-sm border-l-4 border-orange-500 hover:scale-105 transition transform duration-300">
-            <img src="images/gallery5.jpg" alt="Ritual 5" class="w-full h-auto rounded-2xl">
-        </div> -->
-        </div>
+        <div id="galleryContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr"></div>
     </section>
 
     <!-- Contact Section -->
@@ -355,6 +319,115 @@
 
     <!-- Scripts -->
     <script>
+        <!-- Gallery Section JS -->
+        const galleryImages = [
+            {
+                src: "images/gallery7.jpg",
+                alt: "Pandit performing Satyanarayan Katha in Stockholm"
+            },
+            {
+                src: "images/gallery6.jpg",
+                alt: "Grihapravesh, Navgrah Pooja in Stockholm"
+            },
+            {
+                src: "images/gallery5.jpg",
+                alt: "Hawan in Hindu Mandir Stockholm"
+            },
+            {
+                src: "images/gallery4.jpg",
+                alt: "Satyanarayan Katha in Stockholm"
+            },
+            {
+                src: "images/gallery3.jpg",
+                alt: "Grihapravesh Pooja in Stockholm"
+            },
+            {
+                src: "images/gallery2.jpg",
+                alt: "Satyanarayan Pooja in Stockholm"
+            },
+            {
+                src: "images/gallery01.jpg",
+                alt: "Satyanarayan Pooja in Stockholm"
+            },
+            {
+                src: "images/gallery1.jpg",
+                alt: "Akhand Ramayan Pooja in Stockholm"
+            }
+        ];
+
+        const galleryContainer = document.getElementById("galleryContainer");
+
+        galleryImages.forEach(image => {
+            galleryContainer.innerHTML += `
+                <div class="overflow-hidden rounded-2xl shadow-md bg-white aspect-[4/3] cursor-pointer gallery-item">
+                    <img 
+                        src="${image.src}" 
+                        alt="${image.alt}"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                    >
+                </div>
+            `;
+        });
+
+
+        // Create popup lightbox
+        const lightbox = document.createElement("div");
+        lightbox.id = "lightbox";
+        lightbox.className = `
+            fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4
+        `;
+
+        lightbox.innerHTML = `
+            <button id="closeLightbox" 
+                class="absolute top-5 right-5 text-white text-4xl font-bold">
+                &times;
+            </button>
+
+            <img id="lightboxImage" 
+                class="max-w-full max-h-full rounded-xl shadow-2xl">
+        `;
+
+        document.body.appendChild(lightbox);
+
+
+        const lightboxImage = document.getElementById("lightboxImage");
+        const closeLightbox = document.getElementById("closeLightbox");
+
+
+        // Open image popup
+        document.querySelectorAll(".gallery-item img").forEach(img => {
+            img.addEventListener("click", () => {
+                lightboxImage.src = img.src;
+                lightbox.classList.remove("hidden");
+                lightbox.classList.add("flex");
+            });
+        });
+
+
+        // Close popup
+        closeLightbox.addEventListener("click", () => {
+            lightbox.classList.add("hidden");
+            lightbox.classList.remove("flex");
+        });
+
+
+        // Close when clicking outside image
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add("hidden");
+                lightbox.classList.remove("flex");
+            }
+        });
+
+
+        // Close with ESC key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                lightbox.classList.add("hidden");
+                lightbox.classList.remove("flex");
+            }
+        });
         // Disable right click
         /* document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
